@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
+const URL = process.env.DB_URL
+
 // connect to db
 const connectDB = async () => {
     try{
-        await mongoose.connect(
-            "mongodb+srv://novotek:xGlz4KdlyIExUnKV@mern-blog-v1.p7sukvf.mongodb.net/mern-blog?retryWrites=true&w=majority&appName=mern-blog-v1"
-        );
+        await mongoose.connect(URL);
         // await mongoose.connect('mongodb://localhost:27017/mern-blog');
         console.log("DB has been connected");
     }catch(error){
@@ -15,4 +15,3 @@ const connectDB = async () => {
 
 module.exports = connectDB;
 
-//xGlz4KdlyIExUnKV
